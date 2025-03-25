@@ -17,6 +17,14 @@ html(lang="en")
 
         main 
             .grid 
-                article.card.product-item 
-                    header.card_header 
-                        hi.product_title Great Book
+                each product in prods
+                    article.card.product-item 
+                        header.card_header 
+                            hi.product_title Great Book
+                        div.card__image
+                            img(src="/images/report.jpg", alt="Book")
+                        div.card__content 
+                            h2.product__price $19.99
+                            p.product__description A very cool thing 
+                        .card__actions 
+                            button.bt Add to Cart
