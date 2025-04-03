@@ -3,7 +3,7 @@ const Product = require('../models/product');
 
 // Controller to render the form for adding a new product
 exports.getAddProduct = (req, res, next) => {
-    res.render('add-product', {
+    res.render('admin/add-product', {
         // Pass dynamic data into the EJS template
         pageTitle: 'Add Product', 
         formsCSS: true,          // Flag for form-specific styles
@@ -28,7 +28,7 @@ exports.postAddProduct = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
     // Use the model's fetchAll method to read from the JSON file
     Product.fetchAll(products => {
-        res.render('shop', {
+        res.render('shop/product-list', {
             prods: products,                 // Array of products passed to the view
             pageTitle: 'Shop',              // Page title for the view
             hasProducts: products.length > 0, // Flag to conditionally render product list
