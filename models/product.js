@@ -1,4 +1,3 @@
-// Node's built-in modules for file handling and directory paths
 const fs = require('fs');
 const path = require('path');
 
