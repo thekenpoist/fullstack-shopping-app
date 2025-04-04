@@ -14,7 +14,7 @@ exports.getIndex = (req, res, next) => {
     Product.fetchAll(products => {
         res.render('shop/index', {
             prods: products,                 // Array of products passed to the view
-            pageTitle: 'Shop',
+            pageTitle: 'Index',
         });
     });
 };
