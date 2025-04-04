@@ -5,9 +5,6 @@ const Product = require('../models/product');
 exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-product', {
         pageTitle: 'Add Product', 
-        formsCSS: true,          // Flag for form-specific styles
-        productCSS: true,        // Flag for product styles
-        activeAddProduct: true   // Used in the nav to highlight the active page
     });
 };
 
