@@ -15,7 +15,7 @@ exports.getProducts = (req, res, next) => {
 
 exports.getIndex = (req, res, next) => {
     Product.fetchAll(products => {
-        res.render('shop/product-list', {
+        res.render('shop/index', {
             prods: products,                 // Array of products passed to the view
             pageTitle: 'Shop',              
             hasProducts: products.length > 0, // Flag to conditionally render product list
