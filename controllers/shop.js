@@ -19,7 +19,7 @@ exports.getIndex = (req, res, next) => {
     });
 };
 
-exports.getCart( = req, res, next) => {
+exports.getCart = (req, res, next) => {
     res.render('shop/cart', {
         pageTitle: 'Your Cart'
     });
