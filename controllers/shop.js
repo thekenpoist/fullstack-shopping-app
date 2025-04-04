@@ -5,10 +5,7 @@ exports.getProducts = (req, res, next) => {
     Product.fetchAll(products => {
         res.render('shop/product-list', {
             prods: products,                 // Array of products passed to the view
-            pageTitle: 'Shop',              
-            hasProducts: products.length > 0, // Flag to conditionally render product list
-            activeShop: true,               // Used to highlight the active nav link
-            productCSS: true                // Flag for loading product-specific CSS
+            pageTitle: 'All Products',              
         });
     });
 };
@@ -17,10 +14,20 @@ exports.getIndex = (req, res, next) => {
     Product.fetchAll(products => {
         res.render('shop/index', {
             prods: products,                 // Array of products passed to the view
-            pageTitle: 'Shop',              
-            hasProducts: products.length > 0, // Flag to conditionally render product list
-            activeShop: true,               // Used to highlight the active nav link
-            productCSS: true                // Flag for loading product-specific CSS
+            pageTitle: 'Shop',
         });
     });
-}
+};
+
+exports.getCart( = req, res, next) => {
+    res.render('shop/cart', {
+        pageTitle: 'Your Cart'
+    });
+};
+
+exports.getCheckout = (req, res, next) => {
+    res.render('shop/checkout', {
+        pageTitle: 'Checkout'
+    });
+
+};
