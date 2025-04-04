@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/add-product', adminController.getAddProduct);
 
 // Renders the products page
-router.get('/products');
+router.get('/products', adminController.getProducts);
 
 // Handles form submission and saves the new product
 router.post('/add-product', adminController.postAddProduct);
