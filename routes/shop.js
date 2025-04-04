@@ -9,10 +9,10 @@ const shopController = require('../controllers/shop');
 const router = express.Router();
 
 // Displays the home page
-router.get('/', shopController.getProducts);
+router.get('/', shopController.getIndex);
 
 // Displays the products page
-router.get('/products');
+router.get('/products', shopController.getProducts);
 
 // Displays the cart page
 router.get('/cart');
