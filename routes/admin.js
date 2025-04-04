@@ -11,6 +11,9 @@ const router = express.Router();
 // Renders the form to add a new product
 router.get('/add-product', productsController.getAddProduct);
 
+// Renders the products page
+router.get('/products');
+
 // Handles form submission and saves the new product
 router.post('/add-product', productsController.postAddProduct);
 

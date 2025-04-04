@@ -8,7 +8,16 @@ const productsController = require('../controllers/products');
 // Create a router instance for shop-related routes
 const router = express.Router();
 
-// Displays the shop page with the list of products
+// Displays the home page
 router.get('/', productsController.getProducts);
+
+// Displays the products page
+router.get('/products');
+
+// Displays the cart page
+router.get('/cart');
+
+// Displays the checkout page
+router.get('/checkout');
 
 module.exports = router;
