@@ -17,4 +17,4 @@ router.get('/products');
 // Handles form submission and saves the new product
 router.post('/add-product', adminController.postAddProduct);
 
-module.exports = router;
+module.exports = router; 

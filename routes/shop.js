@@ -20,4 +20,4 @@ router.get('/cart');
 // Displays the checkout page
 router.get('/checkout');
 
-module.exports = router;
+module.exports = router; 
