@@ -79,3 +79,9 @@ button:active {
     background-color: #e16ce6;
     color: white;
 }
+
+.square-img {
+    width: 3in;
+    height: 3in;
+    object-fit: cover;
+}
