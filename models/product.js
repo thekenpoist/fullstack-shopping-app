@@ -26,9 +26,12 @@ const getProductsFromFile = (cb) => {
 
 // Product model class
 module.exports = class Product {
-    constructor(title) {
+    constructor(title, imageUrl, description, price) {
         // Initialize a product with a title (you could add more fields later)
         this.title = title;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.price = price;
     }
 
     // Save the current product instance to the JSON file
