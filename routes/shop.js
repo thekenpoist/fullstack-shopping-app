@@ -18,7 +18,7 @@ router.get('/products', shopController.getProducts);
 router.get('/cart', shopController.getCart);
 
 // Displays the cart page
-router.get('/orders', shopController.getOrder);
+router.get('/orders', shopController.getOrders);
 
 // Displays the checkout page
 router.get('/checkout', shopController.getCheckout);
