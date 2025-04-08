@@ -36,6 +36,7 @@ module.exports = class Product {
 
     // Save the current product instance to the JSON file
     save() {
+        this.id = Math.random().toString();
         getProductsFromFile(products => {
             // Push the current product into the list of existing products
             products.push(this);
