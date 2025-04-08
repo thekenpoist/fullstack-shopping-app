@@ -14,6 +14,8 @@ router.get('/', shopController.getIndex);
 // Displays the products page
 router.get('/products', shopController.getProducts);
 
+router.get('/products/:productId', shopController.getProduct)
+
 // Displays the cart page
 router.get('/cart', shopController.getCart);
 
