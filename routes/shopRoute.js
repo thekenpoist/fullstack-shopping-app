@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 
 // Import controller that handles product-related logic
-const shopController = require('../controllers/shop');
+const shopController = require('../controllers/shopController');
 
 // Create a router instance for shop-related routes
 const router = express.Router();

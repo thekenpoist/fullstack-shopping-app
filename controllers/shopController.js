@@ -1,4 +1,4 @@
-const Product = require('../models/product');
+const Product = require('../models/productModel');
 
 // Controller to retrieve and render the list of products
 exports.getProducts = (req, res, next) => {

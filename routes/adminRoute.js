@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 
 // Import controller functions for product-related logic
-const adminController = require('../controllers/admin');
+const adminController = require('../controllers/adminController');
 
 // Create a new router instance to define admin-specific routes
 const router = express.Router();
