@@ -1,13 +1,10 @@
 {
-  "name": "projects",
+  "name": "fullstack-shopping-app",
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "express-handlebars": "^8.0.1",
-    "pug": "^3.0.3",
     "undici-types": "^6.20.0"
   },
   "devDependencies": {
@@ -18,8 +15,11 @@
     "start": "nodemon app.js",
     "start-server": "node app.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thekenpoist/fullstack-shopping-app"
+  },
   "author": "Steve Hull",
-  "license": "ISC",
-  "description": "Complete node.js guide"
+  "license": "GPL-3.0-or-later",
+  "description": "Fullstack customizable ecommerce app"
 }
