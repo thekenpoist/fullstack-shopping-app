@@ -4,7 +4,7 @@ const Product = require('../models/productModel');
 // Controller to render the form for adding a new product
 exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-product', {
-        pageTitle: 'Add Product', 
+        pageTitle: 'Add Product' 
     });
 };
 
