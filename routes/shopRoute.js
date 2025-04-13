@@ -19,6 +19,8 @@ router.get('/products/:productId', shopController.getProduct)
 // Displays the cart page
 router.get('/cart', shopController.getCart);
 
+router.post('/cart', shopController.postCart);
+
 // Displays the cart page
 router.get('/orders', shopController.getOrders);
 
