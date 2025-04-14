@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+const Cart = require('../models/cartModel');
 
 // Controller to retrieve and render the list of products
 exports.getProducts = (req, res, next) => {
@@ -38,7 +39,9 @@ exports.getCart = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
     const prodId = req.body.productId;
-    console.log(prodId);
+    Product.findById(prodId, (product) => {
+        Cart.addProduct(prodId, product.price);
+    })
     res.redirect('/cart');
 };
 
