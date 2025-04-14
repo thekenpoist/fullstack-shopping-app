@@ -13,7 +13,7 @@ module.exports = class Cart{
                 cart = JSON.parse(fileContent);
 
             }
-            const existingProductIndex = cart.products.toString.findIndex(prod => prod.id === id);
+            const existingProductIndex = cart.products.findIndex(prod => prod.id === id);
             const existingProduct = cart.products[existingProductIndex];
             let updatedProduct;
             if (existingProduct) {
@@ -33,4 +33,4 @@ module.exports = class Cart{
 
     }
 
-}
+};
