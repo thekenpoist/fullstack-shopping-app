@@ -26,8 +26,8 @@ const getProductsFromFile = (cb) => {
 
 // Product model class
 module.exports = class Product {
-    constructor(title, imageUrl, description, price) {
-        // Initialize a product with a title (you could add more fields later)
+    constructor(id, title, imageUrl, description, price) {
+        this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -36,15 +36,24 @@ module.exports = class Product {
 
     // Save the current product instance to the JSON file
     save() {
-        this.id = Math.random().toString();
         getProductsFromFile(products => {
-            // Push the current product into the list of existing products
-            products.push(this);
-
-            // Overwrite the JSON file with the updated product list
-            fs.writeFile(p, JSON.stringify(products), err => {
-                if (err) console.log(err);
-            });
+            if (this.id) {
+                const existingProductIndex = products.findIndex(prod => prod.id === this.id);
+                const updatedProducts = [...products];
+                updatedProducts[existingProductIndex] = this;
+                fs.writeFile(p, JSON.stringify(updatedProducts), err => {
+                    if (err) console.log(err);
+                });
+            } else {
+                this.id = Math.random().toString();
+                // Push the current product into the list of existing products
+                products.push(this);
+                // Overwrite the JSON file with the updated product list
+                fs.writeFile(p, JSON.stringify(products), err => {
+                    if (err) console.log(err);
+                });
+            }
+            
         });
     }
 
