@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Cart = require('./cart');
+const Cart = require('./cartModel');
 
 // Construct the absolute path to the products.json file
 const p = path.join(__dirname, '..', 'data', 'products.json');
