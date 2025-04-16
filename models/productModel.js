@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Cart = require('./cart');
 
 // Construct the absolute path to the products.json file
 const p = path.join(__dirname, '..', 'data', 'products.json');
@@ -57,11 +58,14 @@ module.exports = class Product {
         });
     }
 
-    static deleteProduct(id) {
+    static deleteProductById(id) {
         getProductsFromFile(products => {
+            const product = products.find(prod => prod.id === id);
             const updatedProducts = products.filter(prod => prod.id !== id);
             fs.writeFile(p, JSON.stringify(updatedProducts), err => {
-                if (!err) console.log (err);
+                if (!err) {
+                    Cart.deleteProductFromCart(id, product.price);
+                }
             });
         });
     }
