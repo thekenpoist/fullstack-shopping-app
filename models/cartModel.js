@@ -40,7 +40,31 @@ module.exports = class Cart{
                 if (err) {
                     console.log('Error writing file:', err);
                 }
-            })
+            });
+        });
+    }
+
+    static deleteProductFromCart(id, productPrice) {
+        fs.readFile(p, (err, fileContent) => {
+            let cart = { products: [], totalPrice: 0 };
+            if (err) {
+                return;
+            }
+            const parsed = JSON.parse(fileContent);
+            cart = {
+                products: parsed.products,
+                totalPrice: parsed.totalPrice
+            };
+            const updatedCart = { ...cart };
+            const product = updatedCart.products.find(prod => prod.id === id);
+            // const productQty = product.qty;
+            updatedCart.products = updatedCart.products.filter(prod => prod.id !== id);
+            updatedCart.totalPrice -= productPrice * product.qty;
+            fs.writeFile(p, JSON.stringify(updatedCart), (err) => {
+                if (err) {
+                    console.log('Error writing file:', (err));
+                }
+            });
         });
     }
 };
