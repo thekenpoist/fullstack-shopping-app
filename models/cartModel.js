@@ -55,7 +55,7 @@ module.exports = class Cart{
                 products: parsed.products,
                 totalPrice: parsed.totalPrice
             };
-            const updatedCart = { ...cart };
+            const updatedCart = { ...parsed };
             const product = updatedCart.products.find(prod => prod.id === id);
             // const productQty = product.qty;
             updatedCart.products = updatedCart.products.filter(prod => prod.id !== id);

@@ -1,4 +1,3 @@
 {
-        "ignore": ["data/cart.json"],
-        "ignore": ["data/products.json"]
+"ignore": ["data/cart.json", "data/products.json"]
 }
