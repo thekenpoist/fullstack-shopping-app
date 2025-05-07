@@ -4,6 +4,7 @@ const express = require('express');
 
 // Import the controller that handles 404 errors
 const errorController = require('./controllers/errorController');
+const db = require('./config/database');
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use((req, res, next) => {
 // Import route handlers for the admin and shop sections of the app
 const adminRoutes = require('./routes/adminRoute');
 const shopRoutes = require('./routes/shopRoute');
+
+db.execute('SELECT'); // CONTINUE HERE TOMORROW!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // Middleware to parse incoming form data (from POST requests)
 app.use(express.urlencoded({ extended: false }));
