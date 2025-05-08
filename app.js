@@ -30,8 +30,6 @@ db.execute('SELECT * FROM products').then(result => {
     console.log(err);
 });
 
-db.execute('SELECT'); // CONTINUE HERE TOMORROW!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 // Middleware to parse incoming form data (from POST requests)
 app.use(express.urlencoded({ extended: false }));
 
