@@ -24,7 +24,11 @@ app.use((req, res, next) => {
 const adminRoutes = require('./routes/adminRoute');
 const shopRoutes = require('./routes/shopRoute');
 
-db.execute('SELECT * FROM products');
+db.execute('SELECT * FROM products').then(result => {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
 
 db.execute('SELECT'); // CONTINUE HERE TOMORROW!!!!!!!!!!!!!!!!!!!!!!!!!!
 
