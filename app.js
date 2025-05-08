@@ -24,12 +24,6 @@ app.use((req, res, next) => {
 const adminRoutes = require('./routes/adminRoute');
 const shopRoutes = require('./routes/shopRoute');
 
-db.execute('SELECT * FROM products').then(result => {
-    console.log(result[0]);
-}).catch(err => {
-    console.log(err);
-});
-
 // Middleware to parse incoming form data (from POST requests)
 app.use(express.urlencoded({ extended: false }));
 
