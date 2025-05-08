@@ -3,12 +3,14 @@ const Cart = require('../models/cartModel');
 
 // Controller to retrieve and render the list of products
 exports.getProducts = (req, res, next) => {
-    Product.fetchAll(products => {
-        res.render('shop/product-list', {
-            prods: products,                 // Array of products passed to the view
-            pageTitle: 'All Products',              
-        });
-    });
+    Product.fetchAll()
+        .then(([rows]) => {
+            res.render('shop/product-list', {
+                prods: rows,
+                pageTitle: 'All Products'
+            });
+        })
+        .catch(err => console.log(err));
 };
 
 exports.getProduct = (req, res, next) => {
