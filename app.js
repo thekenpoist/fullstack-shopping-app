@@ -24,6 +24,8 @@ app.use((req, res, next) => {
 const adminRoutes = require('./routes/adminRoute');
 const shopRoutes = require('./routes/shopRoute');
 
+db.execute('SELECT * FROM products');
+
 db.execute('SELECT'); // CONTINUE HERE TOMORROW!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // Middleware to parse incoming form data (from POST requests)
