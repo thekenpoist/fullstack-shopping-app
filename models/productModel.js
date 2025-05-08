@@ -1,4 +1,4 @@
-
+const db = require('../config/database');
 const Cart = require('./cartModel');
 
 // Product model class
@@ -11,7 +11,6 @@ module.exports = class Product {
         this.price = price;
     }
 
-    // Save the current product instance to the JSON file
     save() {
         
     }
@@ -20,10 +19,9 @@ module.exports = class Product {
         
     }
 
-    // Static method to fetch all saved products
-    // Accepts a callback to return the list once loaded
-    static fetchAll(cb) {
-
+    
+    static fetchAll() {
+        return db.execute('SELECT * FROM products');
     }
 
     static findById(id, cb) {
