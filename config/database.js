@@ -1,4 +1,9 @@
 require('dotenv').config();
+const Sequelize = require('sequelize');
+
+const Sequelize = new Sequelize()
+
+
 const mysql = require('mysql2');
 
 const pool = mysql.createPool({
