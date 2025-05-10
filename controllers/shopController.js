@@ -3,8 +3,6 @@ const Cart = require('../models/cartModel');
 
 // Controller to retrieve and render the list of products
 exports.getProducts = (req, res, next) => {
-    console.log('💥 getProducts hit');
-
     Product.findAll()
         .then(products => {
             res.render('shop/product-list', {
@@ -13,8 +11,7 @@ exports.getProducts = (req, res, next) => {
             });
         })
         .catch(err => {
-            console.error('❌ Error loading products:', err);
-            res.status(500).send('Internal server error.');
+            console.error(err);
         });
 };
 
