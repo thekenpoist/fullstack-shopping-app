@@ -1,9 +1,9 @@
-/** @type {import('sequelize').Model<any, any>} */
 const Product = require('../models/productModel');
 
 
 // Controller to render the form for adding a new product
 exports.getAddProduct = (req, res, next) => {
+    console.log('🛠 GET /admin/edit-product hit');
     res.render('admin/edit-product', {
         pageTitle: 'Add Product',
         editing: false
@@ -22,12 +22,15 @@ exports.postAddProduct = (req, res, next) => {
         price: price,
         imageUrl: imageUrl,
         description: description
-    }).then(result => {
+    })
+    .then(result => {
         console.log(result);
-    }).catch(err => {
-        console.log(err);
+    })
+    .catch(err => {
+        console.error(err);
     });
 };
+
 
 // Controller to render the form for editing a product
 exports.getEditProduct = (req, res, next) => {
