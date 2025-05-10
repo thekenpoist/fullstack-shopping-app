@@ -72,7 +72,7 @@ exports.getProducts = (req, res, next) => {
             });
         })
         .catch(err => {
-            console.error(err)
+            console.log(err)
         });
 };
 
