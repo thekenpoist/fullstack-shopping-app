@@ -68,13 +68,15 @@ exports.postEditProduct = (req, res, next) => {
             product.imageUrl = updatedImageUrl;
             product.description = updatedDescription;
             return product.save();
-        }).catch(err => {
-            console.log(err);
         })
         .then(result => {
             console.log('Updated Product');
+            res.redirect('/admin/products');
         })
-    res.redirect('/admin/products');
+        .catch(err => {
+            console.log(err);
+        });
+        
 };
 
 exports.getProducts = (req, res, next) => {
