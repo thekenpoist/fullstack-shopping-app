@@ -18,10 +18,10 @@ const Product = sequelize.define('product', {
     },
     imageUrl: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
     },
     description: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false
     }
 });
