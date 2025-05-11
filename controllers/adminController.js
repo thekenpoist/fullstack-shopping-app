@@ -64,6 +64,9 @@ exports.postEditProduct = (req, res, next) => {
 
     Product.findByPk(prodId)
         .then(product => {
+            if (!product) {
+                return res.redirect('/');
+            }
             product.title = updatedTitle;
             product.price = updatedPrice;
             product.imageUrl = updatedImageUrl;
