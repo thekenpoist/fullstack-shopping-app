@@ -3,7 +3,7 @@ const Product = require('../models/productModel');
 
 // Controller to render the form for adding a new product
 exports.getAddProduct = (req, res, next) => {
-    console.log('🛠 GET /admin/edit-product hit');
+    console.log('/admin/edit-product hit');
     res.render('admin/edit-product', {
         pageTitle: 'Add Product',
         editing: false
@@ -94,6 +94,15 @@ exports.getProducts = (req, res, next) => {
 
 exports.postDeleteProduct = (req, res, next) => {
     const prodId = req.body.productId;
-    Product.deleteProductById(prodId);
+    Product.findByPk(prodId)
+        .then(product => {
+            return product.destroy();
+        })
+        .then(result => {
+            console.log(`Destroyed: ${product.title}`);
+            res.redirect('/admin/products');
+        }).catch(err => {
+            console.log(err);
+        });
     res.redirect('/admin/products');
 };
