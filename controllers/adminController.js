@@ -24,7 +24,7 @@ exports.postAddProduct = (req, res, next) => {
         description: description
     })
     .then(result => {
-        console.log(result);
+        console.log('Product added');
         res.redirect('/admin/products');
     })
     .catch(err => {
@@ -105,5 +105,4 @@ exports.postDeleteProduct = (req, res, next) => {
         }).catch(err => {
             console.log(err);
         });
-    res.redirect('/admin/products');
 };
