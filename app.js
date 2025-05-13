@@ -32,6 +32,17 @@ app.use(express.urlencoded({ extended: false }));
 // Middleware to serve static files (CSS, images, JS) from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+    User.findByPk(1)
+        .then(user => {
+            req.user = user;
+            next();
+        })
+        .catch(err => {
+            console.log(err)
+        });
+});
+
 // Prefix all admin routes with "/admin"
 app.use('/admin', adminRoutes);
 
@@ -50,12 +61,11 @@ sequelize.sync()
     })
     .then(user => {
         if (!user) {
-            return User.create({ name: 'Fred', email: 'hunkdiefred@mainModule.com' });
+            return User.create({ name: 'Fred', email: 'hunkdiefred@mail.com' });
         }
         return user;
     })
     .then(user=> {
-        console.log(user);
         app.listen(3000);
     })
     .catch (err => {
