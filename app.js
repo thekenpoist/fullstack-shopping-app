@@ -56,6 +56,7 @@ Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
 User.hasMany(Product);
 
 sequelize.sync()
+//sequelize.sync({ force: true })
     .then(result => {
         return User.findByPk(1);
     })
