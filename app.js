@@ -44,7 +44,7 @@ app.use(errorController.get404);
 Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
 User.hasMany(Product);
 
-sequelize.sync({ force: true })
+sequelize.sync()
     .then(result => {
         console.log("Running");
         app.listen(3000, () => {
