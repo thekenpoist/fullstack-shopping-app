@@ -5,6 +5,8 @@ const express = require('express');
 // Import the controller that handles 404 errors
 const errorController = require('./controllers/errorController');
 const sequelize = require('./config/database');
+const Product = require('./models/productModel');
+const User = require('./models/userModel');
 
 const app = express();
 
@@ -38,6 +40,9 @@ app.use(shopRoutes);
 
 // Fallback middleware for handling 404 errors
 app.use(errorController.get404);
+
+Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
+User.hasMany(Product);
 
 sequelize.sync()
     .then(result => {
